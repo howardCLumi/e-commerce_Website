@@ -1,6 +1,17 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import type { AppProps } from "next/app";
+import { Analytics } from "@vercel/analytics/react";
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <Component {...pageProps} />
+      <Analytics />
+    </>
+  );
+}
 
 export default function Home() {
   return (
